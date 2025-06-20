@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hamro Nepali McCowan Cricket Club - Uniting Nepali Youth Through Cricket in Scarborough, Toronto.">
+    <meta name="keywords" content="cricket, nepal, toronto, scarborough, sports club, community, nepali youth">
+    <meta name="author" content="Hamro Nepali McCowan Cricket Club">
+    
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="HN-MCC: Uniting Nepali Youth Through Cricket">
+    <meta property="og:description" content="One Team. One Dream. One Community. - Join our Nepali cricket community in Scarborough">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:image" content="https://yourwebsite.com/og-image.jpg">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HN-MCC: Uniting Nepali Youth Through Cricket">
+    <meta name="twitter:description" content="One Team. One Dream. One Community. - Scarborough's premier Nepali cricket club">
+    
+    <title>HN-MCC: Uniting Nepali Youth Through Cricket</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+    theme: {
+        extend: {
+            fontFamily: {
+                sans: ['Inter', 'sans-serif']
+            },
+            colors: {
+                gold: {
+                    50: '#fffbeb',
+                    100: '#fef3c7',
+                    200: '#fde68a',
+                    300: '#fcd34d',
+                    400: '#fbbf24',
+                    500: '#f59e0b',
+                    600: '#d97706',
+                    700: '#b45309',
+                    800: '#92400e',
+                    900: '#78350f'
+                }
+            }
+        }
+    }
+}
+    </script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Custom background patterns for Nepali cultural elements */
+        .nepali-bg {
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(0, 0, 0, 0.02) 0%, transparent 50%);
+        }
+        
+        .cultural-shadow {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cultural-shadow::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="80" opacity="0.02" fill="blue">🦏</text></svg>'),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="60" opacity="0.02" fill="blue">🏛️</text></svg>'),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="40" opacity="0.02" fill="blue">🇳🇵</text></svg>');
+            background-size: 200px 200px, 150px 150px, 100px 100px;
+            background-position: 10% 20%, 70% 60%, 90% 80%;
+            background-repeat: no-repeat;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .cultural-shadow > * {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="font-sans bg-white nepali-bg">
+    
+    <!-- Header/Navbar -->
+    <header class="fixed top-0 left-0 right-0 bg-white shadow-lg z-50 border-b-2 border-blue-500">
+        <nav class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <!-- Team Logo -->
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Jun%209%2C%202025%2C%2011_49_37%20PM-jNQq8imknfGV49CcR7NCaSd1O7EvNQ.png" alt="HN-McCowan Cricket Club Logo" class="w-16 h-16 object-contain">
+                    <div>
+                        <h1 class="text-xl font-bold text-gold-400">HN‑McCowan</h1>
+                        <p class="text-xs text-gold-300">Cricket Club</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gold-500 hover:text-gold-600 transition-colors font-medium">Home</a>
+                    <a href="#about" class="text-gold-500 hover:text-gold-600 transition-colors font-medium">About</a>
+                    <a href="#gallery" class="text-gold-500 hover:text-gold-600 transition-colors font-medium">Gallery</a>
+                    <a href="#playgrounds" class="text-gold-500 hover:text-gold-600 transition-colors font-medium">Playgrounds</a>
+                    <a href="#sponsors" class="text-gold-500 hover:text-gold-600 transition-colors font-medium">Sponsors</a>
+                    <a href="#join" class="text-gold-500 hover:text-gold-600 transition-colors font-medium">Join</a>
+                    <a href="#arrange" class="text-gold-500 hover:text-gold-600 transition-colors font-medium">Arrange a Match</a>
+                    <a href="#contact" class="text-gold-500 hover:text-gold-600 transition-colors font-medium">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gold-500 hover:text-gold-600 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="#home" class="text-gold-500 hover:text-gold-600 transition-colors font-medium py-2">Home</a>
+                    <a href="#about" class="text-gold-500 hover:text-gold-600 transition-colors font-medium py-2">About</a>
+                    <a href="#gallery" class="text-gold-500 hover:text-gold-600 transition-colors font-medium py-2">Gallery</a>
+                    <a href="#playgrounds" class="text-gold-500 hover:text-gold-600 transition-colors font-medium py-2">Playgrounds</a>
+                    <a href="#sponsors" class="text-gold-500 hover:text-gold-600 transition-colors font-medium py-2">Sponsors</a>
+                    <a href="#join" class="text-gold-500 hover:text-gold-600 transition-colors font-medium py-2">Join</a>
+                    <a href="#arrange" class="text-gold-500 hover:text-gold-600 transition-colors font-medium py-2">Arrange a Match</a>
+                    <a href="#contact" class="text-gold-500 hover:text-gold-600 transition-colors font-medium py-2">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center bg-gray-50">
+        
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                <span class="text-gold-500">HN-MCC:</span><br>
+                <span class="text-gray-800">Uniting Nepali Youth</span><br>
+                <span class="text-gold-500">Through Cricket</span>
+            </h1>
+            <p class="text-2xl md:text-3xl mb-8 font-light max-w-2xl mx-auto text-gold-600">
+                One Team. One Dream. One Community.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#join" class="bg-gold-500 hover:bg-gold-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+                    Join the Club
+                </a>
+                <a href="#arrange" class="border-2 border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+                    Arrange a Match
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-gray-50 cultural-shadow nepali-bg">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">About Our Club</h2>
+                    <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Our Story</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Hamro Nepali McCowan Cricket Club (HN-MCC) is a Scarborough-based cricket team proudly founded by Nepali students who share a deep passion for the sport. What started as casual matches during the summer of 2024 quickly grew into something bigger — and in 2025, we officially established HN-MCC as a cricket club.
+                        </p>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Today, we are a growing community of over 100 members united by our love for cricket, cultural connection, and team spirit. As proud representatives of the Nepali youth in Canada, we aim to create opportunities for friendly competition, personal growth, and community engagement both on and off the field.
+                        </p>
+                        
+                        <div class="grid grid-cols-2 gap-6 mt-8">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-blue-600">2024</div>
+                                <div class="text-gray-600">Founded</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-blue-600">100+</div>
+                                <div class="text-gray-600">Members</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/506186845_122136881336414887_7356161424076643240_n%20%281%29.jpg-mDad9NCgg4htJlastLY1ouols4Ws2h.jpeg" alt="HN-MCC Team Group Photo" class="rounded-lg shadow-lg w-full border-2 border-blue-300">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white cultural-shadow">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Gallery</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-4"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">Capturing moments of triumph, teamwork, and community spirit</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Team Photos -->
+                <div class="gallery-item cursor-pointer group">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/504570651_122136725402414887_7757321100583325189_n.jpg-aoHPZexWsTOiTDT3uxxQD0ebCjcPcV.jpeg" alt="HN-MCC Team Photo with Nepal Jerseys" class="w-full h-64 object-cover rounded-lg shadow-lg group-hover:shadow-xl transition-shadow border-2 border-gray-200 group-hover:border-blue-400">
+                </div>
+                <div class="gallery-item cursor-pointer group">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/506186845_122136881336414887_7356161424076643240_n%20%281%29.jpg-mDad9NCgg4htJlastLY1ouols4Ws2h.jpeg" alt="Large Team Group Photo" class="w-full h-64 object-cover rounded-lg shadow-lg group-hover:shadow-xl transition-shadow border-2 border-gray-200 group-hover:border-blue-400">
+                </div>
+                <div class="gallery-item cursor-pointer group">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/503492215_122136462224414887_2491932946154972279_n.jpg-pztiysbr67I2TFiw85LRelA55ZNkFg.jpeg" alt="Team Members at Cricket Ground" class="w-full h-64 object-cover rounded-lg shadow-lg group-hover:shadow-xl transition-shadow border-2 border-gray-200 group-hover:border-blue-400">
+                </div>
+                <div class="gallery-item cursor-pointer group">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/503648234_122136462260414887_6739961463405224350_n.jpg-aNyzJEh7yki5ZKCTfelG4ooSYWDUvx.jpeg" alt="Team Members with Cricket Bat" class="w-full h-64 object-cover rounded-lg shadow-lg group-hover:shadow-xl transition-shadow border-2 border-gray-200 group-hover:border-blue-400">
+                </div>
+                <div class="gallery-item cursor-pointer group">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/504899118_122136717836414887_7869607882426683558_n.jpg-4blvlNTz7xquXmTUSwEaHEoDweA1Kw.jpeg" alt="Player in Nepal Jersey on Field" class="w-full h-64 object-cover rounded-lg shadow-lg group-hover:shadow-xl transition-shadow border-2 border-gray-200 group-hover:border-blue-400">
+                </div>
+                <div class="gallery-item cursor-pointer group">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/505502769_122136778652414887_6682464308549063609_n.jpg-1owKIArH2se914FpU0pC5rmwU0Zrfm.jpeg" alt="Team Meeting Circle" class="w-full h-64 object-cover rounded-lg shadow-lg group-hover:shadow-xl transition-shadow border-2 border-gray-200 group-hover:border-blue-400">
+                </div>
+                <div class="gallery-item cursor-pointer group">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/505509238_122136778670414887_4509044828462117387_n.jpg-soHfGYN80bu2HFu5Lg4kcEBgVEi9jl.jpeg" alt="Team Discussion Under Tree" class="w-full h-64 object-cover rounded-lg shadow-lg group-hover:shadow-xl transition-shadow border-2 border-gray-200 group-hover:border-blue-400">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery Modal -->
+    <div id="gallery-modal" class="fixed inset-0 bg-black bg-opacity-95 z-50 hidden flex items-center justify-center p-4">
+        <div class="relative max-w-4xl max-h-full">
+            <button id="close-modal" class="absolute top-4 right-4 text-blue-400 text-3xl hover:text-blue-300 z-10">
+                <i class="fas fa-times"></i>
+            </button>
+            <button id="download-image" class="absolute top-4 left-4 text-blue-400 text-2xl hover:text-blue-300 z-10" title="Download Image">
+                <i class="fas fa-download"></i>
+            </button>
+            <img id="modal-image" src="/placeholder.svg" alt="" class="max-w-full max-h-full object-contain border-2 border-blue-400 rounded-lg">
+        </div>
+    </div>
+    
+    <!-- Playgrounds Section -->
+    <section id="playgrounds" class="py-20 bg-gray-50 cultural-shadow nepali-bg">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Our Playgrounds</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-4"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">Where the magic happens - our home grounds across Scarborough</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- UMC High School Ground (MCG) -->
+                <div class="bg-white rounded-lg shadow-lg p-6 border-2 border-blue-200 hover:border-blue-400 transition-colors">
+                    <div class="text-center mb-4">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-blue-300">
+                            <i class="fas fa-home text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">UMC High School Ground</h3>
+                        <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold">HOME GROUND (MCG)</span>
+                    </div>
+                    <p class="text-gray-600 text-center mb-4">
+                        Our primary venue where most of our matches take place. This is our beloved "MCG" - the heart of HN-MCC cricket.
+                    </p>
+                    <div class="text-center">
+                        <a href="https://maps.app.goo.gl/7KKwhzMFvdKki7HN9" target="_blank" 
+                           class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors inline-flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            View on Maps
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- McCowan District Park -->
+                <div class="bg-white rounded-lg shadow-lg p-6 border-2 border-green-200 hover:border-green-400 transition-colors">
+                    <div class="text-center mb-4">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-green-300">
+                            <i class="fas fa-sun text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">McCowan District Park</h3>
+                        <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-bold">MORNING MATCHES</span>
+                    </div>
+                    <p class="text-gray-600 text-center mb-4">
+                        Perfect for our early morning cricket sessions. A beautiful park setting where we enjoy our weekend games.
+                    </p>
+                    <div class="text-center">
+                        <a href="https://maps.app.goo.gl/CcM23kXLQZE1xSyd9" target="_blank" 
+                           class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors inline-flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            View on Maps
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Corvette Park -->
+                <div class="bg-white rounded-lg shadow-lg p-6 border-2 border-purple-200 hover:border-purple-400 transition-colors">
+                    <div class="text-center mb-4">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-purple-300">
+                            <i class="fas fa-balance-scale text-purple-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Corvette Park</h3>
+                        <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-bold">NEUTRAL VENUE</span>
+                    </div>
+                    <p class="text-gray-600 text-center mb-4">
+                        Our backup venue and neutral ground for special matches when MCG is not available. Great facilities and atmosphere.
+                    </p>
+                    <div class="text-center">
+                        <a href="https://maps.app.goo.gl/f8GScP2N5a4CfCoT9" target="_blank" 
+                           class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors inline-flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            View on Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sponsors Section -->
+    <section id="sponsors" class="py-20 bg-white cultural-shadow">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Our Sponsors</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-4"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">Thank you to our amazing sponsors who make our cricket dreams possible</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <!-- Platinum Sponsor - ICCC (larger) -->
+                <div class="md:col-span-3 flex justify-center mb-8">
+                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow border-4 border-blue-400 hover:border-blue-500 max-w-md">
+                        <div class="text-center mb-4">
+                            <span class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">PLATINUM SPONSOR</span>
+                        </div>
+                        <a href="https://icccedu.com/" target="_blank" class="block hover:scale-105 transition-transform duration-300">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ICCC-Logo.jpg-BHbdUKOMtmbv4Bm3GFRvHUc4rEFFuv.jpeg" alt="International Career Counselling Centre" class="w-full h-24 object-contain">
+                        </a>
+                        <div class="text-center mt-4">
+                            <a href="https://icccedu.com/" target="_blank" class="block hover:text-blue-600 transition-colors">
+                                <h4 class="font-semibold text-gray-800">International Career Counselling Centre</h4>
+                                <p class="text-sm text-gray-600">Education & Career Guidance</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bronze Sponsors -->
+                <div class="sponsor-logo bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border-2 border-amber-600 hover:border-amber-700">
+                    <div class="text-center mb-3">
+                        <span class="bg-amber-600 text-white px-3 py-1 rounded-full text-xs font-bold">BRONZE SPONSOR</span>
+                    </div>
+                    <a href="https://www.facebook.com/p/Hamro-Bazar-and-Take-out-Kitchen-61566374786793/" target="_blank" class="block hover:scale-105 transition-transform duration-300">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Jun%207%2C%202025%2C%2006_04_21%20PM-VkrO25puWQXtEj05HqfDMwnrsnTsMO.png" alt="Hamro Bazar & Takeout Kitchen" class="w-full h-16 object-contain">
+                    </a>
+                    <div class="text-center mt-3">
+                        <a href="https://www.facebook.com/p/Hamro-Bazar-and-Take-out-Kitchen-61566374786793/" target="_blank" class="block hover:text-blue-600 transition-colors">
+                            <h4 class="font-semibold text-gray-800 text-sm">Hamro Bazar & Takeout</h4>
+                            <p class="text-xs text-gray-600">Grocery & Fresh Food</p>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="sponsor-logo bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border-2 border-amber-600 hover:border-amber-700">
+                    <div class="text-center mb-3">
+                        <span class="bg-amber-600 text-white px-3 py-1 rounded-full text-xs font-bold">BRONZE SPONSOR</span>
+                    </div>
+                    <a href="https://www.facebook.com/sagoonGroup" target="_blank" class="block hover:scale-105 transition-transform duration-300">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Jun%2018%2C%202025%2C%2001_50_15%20PM-JqOBrrRHBoNvNcDbTy3fRvbbjuUhhq.png" alt="Sagoon Group - eXp Realty" class="w-full h-16 object-contain">
+                    </a>
+                    <div class="text-center mt-3">
+                        <a href="https://www.facebook.com/sagoonGroup" target="_blank" class="block hover:text-blue-600 transition-colors">
+                            <h4 class="font-semibold text-gray-800 text-sm">Sagoon Group</h4>
+                            <p class="text-xs text-gray-600">eXp Realty</p>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Placeholder for future sponsor -->
+                <div class="sponsor-logo bg-gray-100 p-6 rounded-lg shadow-lg border-2 border-dashed border-gray-300 flex flex-col items-center justify-center min-h-[200px]">
+                    <i class="fas fa-plus text-gray-400 text-3xl mb-4"></i>
+                    <p class="text-gray-500 text-center font-medium">Your Logo Here</p>
+                    <p class="text-gray-400 text-sm text-center mt-2">Become our next sponsor</p>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+                    Become a Sponsor
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Join Our Club Section -->
+    <section id="join" class="py-20 bg-gray-50 cultural-shadow nepali-bg">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Join Our Club</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
+                
+                <p class="text-xl text-gray-600 mb-12 leading-relaxed">
+                    Become part of our cricket family and enjoy exclusive benefits including regular matches, 
+                    training sessions, community events, cultural celebrations, and lifelong friendships. 
+                    Whether you're a seasoned player or just starting out, everyone is welcome!
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-blue-300">
+                            <i class="fas fa-users text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Community</h3>
+                        <p class="text-gray-600">Connect with fellow Nepali cricket enthusiasts</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-blue-300">
+                            <i class="fas fa-trophy text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Competitions</h3>
+                        <p class="text-gray-600">Participate in local and regional tournaments</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-blue-300">
+                            <i class="fas fa-heart text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Culture</h3>
+                        <p class="text-gray-600">Celebrate Nepali traditions and festivals</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg border-2 border-blue-200 shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4">Membership Application</h3>
+                    <form action="https://formspree.io/f/movwnjev" method="POST" class="space-y-6">
+                        <input type="hidden" name="_subject" value="New Membership Application - HN-McCowan Cricket Club">
+                        <input type="hidden" name="_next" value="#join">
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="member-name" class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                                <input type="text" id="member-name" name="name" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label for="member-email" class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                                <input type="email" id="member-email" name="email" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="member-phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+                                <input type="tel" id="member-phone" name="phone" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label for="member-age" class="block text-sm font-medium text-gray-700 mb-2">Age</label>
+                                <input type="number" id="member-age" name="age" min="16" max="65"
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="cricket-experience" class="block text-sm font-medium text-gray-700 mb-2">Cricket Experience</label>
+                            <select id="cricket-experience" name="experience" 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                <option value="">Select your level</option>
+                                <option value="beginner">Beginner</option>
+                                <option value="intermediate">Intermediate</option>
+                                <option value="advanced">Advanced</option>
+                                <option value="professional">Professional</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="member-message" class="block text-sm font-medium text-gray-700 mb-2">Why do you want to join? (Optional)</label>
+                            <textarea id="member-message" name="message" rows="4" 
+                                      placeholder="Tell us about yourself and why you'd like to join our cricket family..."
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" 
+                                    class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+                                Submit Application
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Arrange a Match Section -->
+    <section id="arrange" class="py-20 bg-white cultural-shadow">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Arrange a Match</h2>
+                    <div class="w-24 h-1 bg-blue-600 mx-auto mb-4"></div>
+                    <p class="text-gray-600 max-w-2xl mx-auto">
+                        Looking for a friendly match? Get in touch with us to arrange a game with your team or club.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-lg shadow-lg p-8 border-2 border-blue-200">
+                    <form id="match-form" action="https://formspree.io/f/xrbkaepa" method="POST" class="space-y-6">
+                        <input type="hidden" name="_subject" value="Match Arrangement Request - HN-McCowan Cricket Club">
+                        <input type="hidden" name="_next" value="#arrange">
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="contact-name" class="block text-sm font-medium text-gray-700 mb-2">Your Name *</label>
+                                <input type="text" id="contact-name" name="name" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label for="club-name" class="block text-sm font-medium text-gray-700 mb-2">Club/Team Name *</label>
+                                <input type="text" id="club-name" name="club" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="preferred-date" class="block text-sm font-medium text-gray-700 mb-2">Preferred Date</label>
+                                <input type="date" id="preferred-date" name="date" 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label for="contact-phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                                <input type="tel" id="contact-phone" name="phone" 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="match-message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <textarea id="match-message" name="message" rows="4" 
+                                      placeholder="Tell us about your team, preferred match format, or any special requirements..."
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" 
+                                    class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+                                Send Match Request
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50 cultural-shadow nepali-bg">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Contact Us</h2>
+                    <div class="w-24 h-1 bg-blue-600 mx-auto mb-4"></div>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Get in touch with us for any questions, sponsorship opportunities, or just to say hello!</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-8">Get In Touch</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 border-2 border-blue-300">
+                                    <i class="fas fa-phone text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Phone</h4>
+                                    <p class="text-gray-600">
+                                        <a href="tel:+14374274775" class="hover:text-blue-600 transition-colors">(437) 427-4775</a><br>
+                                        <a href="tel:+14372580180" class="hover:text-blue-600 transition-colors">(437) 258-0180</a>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 border-2 border-blue-300">
+                                    <i class="fas fa-envelope text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Email</h4>
+                                    <p class="text-gray-600">
+                                        <a href="mailto:hnmccowanmanagement@gmail.com" class="hover:text-blue-600 transition-colors">hnmccowanmanagement@gmail.com</a>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 border-2 border-blue-300">
+                                    <i class="fas fa-map-marker-alt text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Location</h4>
+                                    <p class="text-gray-600">Scarborough, Toronto<br>Ontario, Canada</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-semibold text-gray-800 mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="https://www.facebook.com/profile.php?id=61577331714573" target="_blank" 
+                                   class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors border-2 border-blue-300 hover:border-blue-400">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://www.instagram.com/hn.mccowncricketclub/" target="_blank" 
+                                   class="w-12 h-12 bg-pink-600 text-white rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors border-2 border-blue-300 hover:border-blue-400">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="https://twitter.com/hnmcc" target="_blank" 
+                                   class="w-12 h-12 bg-blue-400 text-white rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors border-2 border-blue-300 hover:border-blue-400">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="https://youtube.com/hnmcc" target="_blank" 
+                                   class="w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center hover:bg-red-700 transition-colors border-2 border-blue-300 hover:border-blue-400">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-8">Send us a Message</h3>
+                        
+                        <form id="contact-form" action="https://formspree.io/f/xnnvbjpo" method="POST" class="space-y-6">
+                            <input type="hidden" name="_subject" value="Contact Form - HN-McCowan Cricket Club">
+                            <input type="hidden" name="_next" value="#contact">
+                            
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name *</label>
+                                    <input type="text" id="name" name="name" required 
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                                    <input type="email" id="email" name="email" required 
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                                <input type="text" id="subject" name="subject" 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message *</label>
+                                <textarea id="message" name="message" rows="5" required 
+                                          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+                            </div>
+                            
+                            <div>
+                                <button type="submit" 
+                                        class="w-full bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 border-t-2 border-blue-500">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Jun%209%2C%202025%2C%2011_49_37%20PM-jNQq8imknfGV49CcR7NCaSd1O7EvNQ.png" alt="HN-McCowan Cricket Club Logo" class="w-12 h-12 object-contain">
+                        <div>
+                            <h3 class="text-lg font-bold text-blue-400">HN‑McCowan</h3>
+                            <p class="text-sm text-gray-300">Cricket Club</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Uniting Nepali youth through cricket in Scarborough since 2024.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4 text-blue-400">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#home" class="text-gray-400 hover:text-blue-400 transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-blue-400 transition-colors">About</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-blue-400 transition-colors">Gallery</a></li>
+                        <li><a href="#playgrounds" class="text-gray-400 hover:text-blue-400 transition-colors">Playgrounds</a></li>
+                        <li><a href="#join" class="text-gray-400 hover:text-blue-400 transition-colors">Join Us</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4 text-blue-400">Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#arrange" class="text-gray-400 hover:text-blue-400 transition-colors">Arrange Match</a></li>
+                        <li><a href="#sponsors" class="text-gray-400 hover:text-blue-400 transition-colors">Sponsorship</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-blue-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4 text-blue-400">Connect</h4>
+                    <div class="flex space-x-3">
+                        <a href="https://www.facebook.com/profile.php?id=61577331714573" target="_blank" class="text-gray-400 hover:text-blue-400 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/hn.mccowncricketclub/" target="_blank" class="text-gray-400 hover:text-blue-400 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://twitter.com/hnmcc" target="_blank" class="text-gray-400 hover:text-blue-400 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://youtube.com/hnmcc" target="_blank" class="text-gray-400 hover:text-blue-400 transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; <span id="current-year"></span> Hamro Nepali McCowan Cricket Club. All rights reserved.</p>
+                <p class="mt-2">Designed with ❤️ & 🏏 in Toronto</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on links
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Gallery lightbox
+        const galleryItems = document.querySelectorAll('.gallery-item img');
+        const modal = document.getElementById('gallery-modal');
+        const modalImage = document.getElementById('modal-image');
+        const closeModal = document.getElementById('close-modal');
+        const downloadBtn = document.getElementById('download-image');
+        
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                modalImage.src = item.src;
+                modalImage.alt = item.alt;
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        closeModal.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+        
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Download image functionality
+        downloadBtn.addEventListener('click', () => {
+            const link = document.createElement('a');
+            link.href = modalImage.src;
+            link.download = modalImage.alt || 'hn-mcc-photo.jpg';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+        
+        // Form validation
+        const forms = document.querySelectorAll('form');
+        forms.forEach(form => {
+            form.addEventListener('submit', function(e) {
+                const requiredFields = form.querySelectorAll('[required]');
+                let isValid = true;
+                
+                requiredFields.forEach(field => {
+                    if (!field.value.trim()) {
+                        isValid = false;
+                        field.classList.add('border-red-500');
+                        field.classList.remove('border-gray-300');
+                    } else {
+                        field.classList.remove('border-red-500');
+                        field.classList.add('border-gray-300');
+                    }
+                });
+                
+                if (!isValid) {
+                    e.preventDefault();
+                    alert('Please fill in all required fields.');
+                }
+            });
+        });
+        
+        // Update current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('bg-white');
+            } else {
+                header.classList.remove('bg-white');
+            }
+        });
+    </script>
+</body>
+</html>
