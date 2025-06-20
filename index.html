@@ -1176,7 +1176,7 @@
         const modalAlbumTitle = document.getElementById('modal-album-title');
         const modalPhotoList = document.getElementById('modal-photo-list');
         
-        document.querySelectorAll('.view-album-btn').forEach(btn => {
+        galleryAlbumsContainer.querySelectorAll('.view-album-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const idx = this.getAttribute('data-album-idx');
                 const album = galleryAlbums[idx];
@@ -1190,6 +1190,17 @@
             galleryModal.classList.add('hidden');
             document.body.style.overflow = 'auto';
         });
+        
+        // Gallery data with local images
+        const galleryImages = [
+            { src: 'gallery/old_diaries/gallery (1).jpg', alt: 'HN-MCC Team Photo 1', category: 'team', caption: 'Team Photo - Season 2024' },
+            { src: 'gallery/old_diaries/gallery (2).jpg', alt: 'HN-MCC Team Photo 2', category: 'team', caption: 'Squad Goals - Pre-match huddle' },
+            { src: 'gallery/old_diaries/gallery (3).jpg', alt: 'Cricket Match Action', category: 'matches', caption: 'Match Action - Batting masterclass' },
+            { src: 'gallery/old_diaries/gallery (4).jpg', alt: 'Victory Celebration', category: 'matches', caption: 'Victory! - Championship win' },
+            { src: 'gallery/old_diaries/gallery (5).jpg', alt: 'Club Event', category: 'events', caption: 'Club Event - Annual dinner' },
+            { src: 'gallery/old_diaries/gallery (6).jpg', alt: 'Training Session', category: 'events', caption: 'Training Day - Skills development' },
+            { src: 'gallery/old_diaries/gallery (7).jpg', alt: 'Team Bonding', category: 'team', caption: 'Team Bonding - Off-field friendship' }
+        ];
     </script>
 </body>
 </html>
