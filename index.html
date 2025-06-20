@@ -20,7 +20,7 @@
     
     <title>HN-MCC: Uniting Nepali Youth Through Cricket</title>
     
-    <!-- Tailwind CSS CDN -->
+    <!-- Tailwind CSS CDN - Latest Version -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Tailwind Config -->
@@ -73,7 +73,8 @@
                     animation: {
                         'fade-in': 'fadeIn 0.5s ease-in-out',
                         'slide-up': 'slideUp 0.5s ease-out',
-                        'scale-in': 'scaleIn 0.3s ease-out'
+                        'scale-in': 'scaleIn 0.3s ease-out',
+                        'zoom-in': 'zoomIn 0.3s ease-out'
                     },
                     keyframes: {
                         fadeIn: {
@@ -87,6 +88,10 @@
                         scaleIn: {
                             '0%': { transform: 'scale(0.95)', opacity: '0' },
                             '100%': { transform: 'scale(1)', opacity: '1' }
+                        },
+                        zoomIn: {
+                            '0%': { transform: 'scale(0.8)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' }
                         }
                     }
                 }
@@ -97,11 +102,14 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Awesome - Latest Version -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- AOS Animation Library -->
+    <!-- AOS Animation Library - Latest Version -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Lightbox CSS for Gallery -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
     
     <!-- Custom Styles -->
     <style>
@@ -148,6 +156,122 @@
         .btn-secondary:hover {
             background: linear-gradient(135deg, #d97706, #b45309);
             transform: translateY(-1px);
+        }
+        
+        /* Gallery Styles */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        
+        .album-card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .album-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .album-preview {
+            height: 200px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2px;
+        }
+        
+        .album-preview-main {
+            grid-row: span 2;
+        }
+        
+        .album-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Modal Styles */
+        .modal-backdrop {
+            backdrop-filter: blur(5px);
+            background: rgba(0, 0, 0, 0.8);
+        }
+        
+        .modal-content {
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Custom Lightbox Styles */
+        .lb-data .lb-caption {
+            font-size: 16px;
+            font-weight: 500;
+            color: #fff;
+        }
+        
+        .lb-data .lb-number {
+            color: #ccc;
         }
     </style>
 </head>
@@ -281,31 +405,134 @@
         </div>
     </section>
     
-    <!-- Gallery Section -->
+    <!-- Gallery Section - Fully Responsive, Robust, Modern -->
     <section id="gallery" class="py-24 bg-neutral-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16" data-aos="fade-up">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
                 <h2 class="text-4xl md:text-5xl font-bold text-neutral-800 mb-4">Gallery</h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-primary-500 to-gold-500 mx-auto mb-6"></div>
                 <p class="text-xl text-neutral-600 max-w-3xl mx-auto">
-                    Explore our albums. Click any album to see more photos!
+                    Explore our memories through photos. Click any image to view it larger!
                 </p>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Album Cards (auto-generated by JS) -->
-                <div id="gallery-albums"></div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8">
+                <a href="gallery/old_diaries/WhatsApp Image 2025-06-19 at 9.34.53 PM.jpeg" data-lightbox="old_diaries" data-title="Old Diaries - WhatsApp 3" class="block rounded-xl overflow-hidden shadow-lg group aspect-[4/3]">
+                    <img src="gallery/old_diaries/WhatsApp Image 2025-06-19 at 9.34.53 PM.jpeg" alt="Old Diaries - WhatsApp 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </a>
+                <a href="gallery/players/player (7).jpeg" data-lightbox="players" data-title="Player 7" class="block rounded-xl overflow-hidden shadow-lg group aspect-[4/3]">
+                    <img src="gallery/players/player (7).jpeg" alt="Player 7" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </a>
+                <a href="gallery/old_diaries/gallery (7).jpg" data-lightbox="old_diaries" data-title="Old Diaries 7" class="block rounded-xl overflow-hidden shadow-lg group aspect-[4/3]">
+                    <img src="gallery/old_diaries/gallery (7).jpg" alt="Old Diaries 7" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </a>
+            </div>
+            <div class="text-center">
+                <button id="see-more-gallery" class="btn-primary text-white px-8 py-4 rounded-full font-semibold text-lg inline-flex items-center justify-center">
+                    <i class="fas fa-images mr-2"></i>
+                    See More
+                </button>
             </div>
         </div>
-        <!-- Gallery Modal -->
-        <div id="gallery-modal" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center">
-            <div class="bg-white rounded-2xl shadow-2xl max-w-3xl w-full p-6 relative">
-                <button id="close-gallery-modal" class="absolute top-4 right-4 text-neutral-600 hover:text-primary-600 text-2xl"><i class="fas fa-times"></i></button>
-                <h3 id="modal-album-title" class="text-2xl font-bold mb-4 text-center"></h3>
-                <div id="modal-photo-list" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4"></div>
+        <!-- Modal -->
+        <div id="gallery-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 hidden">
+            <div class="bg-white rounded-2xl shadow-2xl max-w-5xl w-full mx-2 p-4 sm:p-8 relative overflow-y-auto max-h-[90vh]">
+                <button id="close-gallery-modal" class="absolute top-4 right-4 text-2xl text-neutral-500 hover:text-red-500 focus:outline-none"><i class="fas fa-times"></i></button>
+                <h3 class="text-2xl font-bold mb-6 text-center text-neutral-800">Gallery Albums</h3>
+                <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8">
+                    <button class="album-tab btn-secondary px-4 sm:px-6 py-2 rounded-full font-semibold" data-folder="highlights">Highlights</button>
+                    <button class="album-tab btn-secondary px-4 sm:px-6 py-2 rounded-full font-semibold" data-folder="old_diaries">Old Diaries</button>
+                    <button class="album-tab btn-secondary px-4 sm:px-6 py-2 rounded-full font-semibold" data-folder="players">Players</button>
+                </div>
+                <div id="modal-gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <!-- Images will be loaded here -->
+                </div>
             </div>
         </div>
+        <script>
+        // Modal logic
+        const seeMoreBtn = document.getElementById('see-more-gallery');
+        const modal = document.getElementById('gallery-modal');
+        const closeModalBtn = document.getElementById('close-gallery-modal');
+        const modalGrid = document.getElementById('modal-gallery-grid');
+        const albumTabs = document.querySelectorAll('.album-tab');
+
+        // Images by folder (updated)
+        const galleryFolders = {
+            highlights: [
+                { src: 'gallery/highlights/gallery (5).jpg', title: 'Highlight 5' }
+            ],
+            old_diaries: [
+                { src: 'gallery/old_diaries/gallery (1).jpg', title: 'Old Diaries 1' },
+                { src: 'gallery/old_diaries/gallery (2).jpg', title: 'Old Diaries 2' },
+                { src: 'gallery/old_diaries/gallery (3).jpg', title: 'Old Diaries 3' },
+                { src: 'gallery/old_diaries/gallery (4).jpg', title: 'Old Diaries 4' },
+                { src: 'gallery/old_diaries/gallery (5).jpg', title: 'Old Diaries 5' },
+                { src: 'gallery/old_diaries/gallery (6).jpg', title: 'Old Diaries 6' },
+                { src: 'gallery/old_diaries/gallery (7).jpg', title: 'Old Diaries 7' },
+                { src: 'gallery/old_diaries/WhatsApp Image 2025-06-19 at 9.34.51 PM (3).jpeg', title: 'Old Diaries - WhatsApp 1' },
+                { src: 'gallery/old_diaries/WhatsApp Image 2025-06-19 at 9.34.52 PM.jpeg', title: 'Old Diaries - WhatsApp 2' },
+                { src: 'gallery/old_diaries/WhatsApp Image 2025-06-19 at 9.34.53 PM.jpeg', title: 'Old Diaries - WhatsApp 3' }
+            ],
+            players: [
+                { src: 'gallery/players/player (1).jpeg', title: 'Player 1' },
+                { src: 'gallery/players/player (2).jpeg', title: 'Player 2' },
+                { src: 'gallery/players/player (3).jpeg', title: 'Player 3' },
+                { src: 'gallery/players/player (4).jpeg', title: 'Player 4' },
+                { src: 'gallery/players/player (5).jpeg', title: 'Player 5' },
+                { src: 'gallery/players/player (6).jpeg', title: 'Player 6' },
+                { src: 'gallery/players/player (7).jpeg', title: 'Player 7' }
+            ]
+        };
+
+        function renderModalImages(folder) {
+            modalGrid.innerHTML = '';
+            galleryFolders[folder].forEach(img => {
+                const a = document.createElement('a');
+                a.href = img.src;
+                a.setAttribute('data-lightbox', folder);
+                a.setAttribute('data-title', img.title);
+                a.className = 'block rounded-xl overflow-hidden shadow-lg group aspect-[4/3]';
+                a.innerHTML = `<img src="${img.src}" alt="${img.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">`;
+                modalGrid.appendChild(a);
+            });
+        }
+
+        seeMoreBtn.addEventListener('click', () => {
+            modal.classList.remove('hidden');
+            renderModalImages('highlights');
+            albumTabs.forEach(tab => tab.classList.remove('bg-primary-600', 'text-white'));
+            albumTabs[0].classList.add('bg-primary-600', 'text-white');
+            document.body.classList.add('overflow-hidden');
+        });
+        closeModalBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        });
+        albumTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                albumTabs.forEach(t => t.classList.remove('bg-primary-600', 'text-white'));
+                tab.classList.add('bg-primary-600', 'text-white');
+                renderModalImages(tab.dataset.folder);
+            });
+        });
+        // Close modal on outside click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            }
+        });
+        // Keyboard: ESC closes modal
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                modal.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            }
+        });
+        </script>
     </section>
-    
+    <!-- END NEW GALLERY -->
+
     <!-- Venues Section -->
     <section id="playgrounds" class="py-24 bg-white">
         <div class="container mx-auto px-6">
@@ -809,8 +1036,11 @@
         </div>
     </footer>
     
-    <!-- AOS Animation Library -->
+    <!-- AOS Animation Library - Latest Version -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Lightbox JS for Gallery - Latest Version -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
     
     <!-- JavaScript -->
     <script>
@@ -822,49 +1052,14 @@
             offset: 100
         });
         
-        // Photo Index with actual images
-        const photoIndex = {
-            all: [
-                { 
-                    src: 'gallery/old_diaries/gallery (1).jpg', 
-                    alt: 'HN-MCC Team Photo 1', 
-                    category: 'team' 
-                },
-                { 
-                    src: 'gallery/old_diaries/gallery (2).jpg', 
-                    alt: 'HN-MCC Team Photo 2', 
-                    category: 'team' 
-                },
-                { 
-                    src: 'gallery/old_diaries/gallery (3).jpg', 
-                    alt: 'HN-MCC Team Photo 3', 
-                    category: 'team' 
-                },
-                { 
-                    src: 'gallery/old_diaries/gallery (4).jpg', 
-                    alt: 'HN-MCC Team Photo 4', 
-                    category: 'team' 
-                },
-                { 
-                    src: 'gallery/old_diaries/gallery (5).jpg', 
-                    alt: 'HN-MCC Team Photo 5', 
-                    category: 'match' 
-                },
-                { 
-                    src: 'gallery/old_diaries/gallery (6).jpg', 
-                    alt: 'HN-MCC Team Photo 6', 
-                    category: 'team' 
-                },
-                { 
-                    src: 'gallery/old_diaries/gallery (7).jpg', 
-                    alt: 'HN-MCC Team Photo 7', 
-                    category: 'team' 
-                }
-            ]
-        };
-        
-        let currentPhotoIndex = 0;
-        let currentPhotos = photoIndex.all;
+        // Configure Lightbox
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true,
+            'albumLabel': 'Image %1 of %2',
+            'fadeDuration': 300,
+            'imageFadeDuration': 300
+        });
         
         // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -872,6 +1067,9 @@
         
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
         });
         
         // Close mobile menu when clicking on links
@@ -879,6 +1077,9 @@
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
             });
         });
         
@@ -897,124 +1098,6 @@
                     });
                 }
             });
-        });
-        
-        // Gallery functionality
-        const galleryModal = document.getElementById('gallery-modal');
-        const modalMainImage = document.getElementById('modal-main-image');
-        const modalTitle = document.getElementById('modal-title');
-        const photoCounter = document.getElementById('photo-counter');
-        const photoGrid = document.getElementById('photo-grid');
-        
-        // Gallery preview clicks
-        document.querySelectorAll('.gallery-preview').forEach(item => {
-            item.addEventListener('click', () => {
-                const index = parseInt(item.dataset.index);
-                openGalleryModal('all', index);
-            });
-        });
-        
-        // Gallery option buttons
-        document.getElementById('view-all-btn').addEventListener('click', () => {
-            openGalleryModal('all', 0);
-        });
-        
-        document.getElementById('team-photos-btn').addEventListener('click', () => {
-            const teamPhotos = photoIndex.all.filter(photo => photo.category === 'team');
-            openGalleryModal('team', 0, teamPhotos);
-        });
-        
-        document.getElementById('match-photos-btn').addEventListener('click', () => {
-            const matchPhotos = photoIndex.all.filter(photo => photo.category === 'match');
-            openGalleryModal('match', 0, matchPhotos);
-        });
-        
-        function openGalleryModal(category, startIndex, photos = null) {
-            currentPhotos = photos || photoIndex.all;
-            currentPhotoIndex = startIndex;
-            
-            modalTitle.textContent = category === 'all' ? 'All Photos' : 
-                                   category === 'team' ? 'Team Photos' :
-                                   category === 'match' ? 'Match Highlights' : 'Event Photos';
-            
-            updateModalImage();
-            populatePhotoGrid();
-            galleryModal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-        
-        function updateModalImage() {
-            if (currentPhotos.length > 0) {
-                modalMainImage.src = currentPhotos[currentPhotoIndex].src;
-                modalMainImage.alt = currentPhotos[currentPhotoIndex].alt;
-                photoCounter.textContent = `${currentPhotoIndex + 1} / ${currentPhotos.length}`;
-            }
-        }
-        
-        function populatePhotoGrid() {
-            photoGrid.innerHTML = '';
-            currentPhotos.forEach((photo, index) => {
-                const img = document.createElement('img');
-                img.src = photo.src;
-                img.alt = photo.alt;
-                img.className = `w-full h-20 object-cover rounded-lg cursor-pointer border-2 ${index === currentPhotoIndex ? 'border-primary-400' : 'border-neutral-300'} hover:border-primary-400 transition-colors`;
-                img.addEventListener('click', () => {
-                    currentPhotoIndex = index;
-                    updateModalImage();
-                    populatePhotoGrid();
-                });
-                photoGrid.appendChild(img);
-            });
-        }
-        
-        // Modal navigation
-        document.getElementById('prev-photo').addEventListener('click', () => {
-            currentPhotoIndex = (currentPhotoIndex - 1 + currentPhotos.length) % currentPhotos.length;
-            updateModalImage();
-            populatePhotoGrid();
-        });
-        
-        document.getElementById('next-photo').addEventListener('click', () => {
-            currentPhotoIndex = (currentPhotoIndex + 1) % currentPhotos.length;
-            updateModalImage();
-            populatePhotoGrid();
-        });
-        
-        // Close modal
-        document.getElementById('close-gallery-modal').addEventListener('click', () => {
-            galleryModal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        });
-        
-        // Download current image
-        document.getElementById('download-current').addEventListener('click', () => {
-            const link = document.createElement('a');
-            link.href = currentPhotos[currentPhotoIndex].src;
-            link.download = currentPhotos[currentPhotoIndex].alt || 'hn-mcc-photo.jpg';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        });
-        
-        // Close modal when clicking outside
-        galleryModal.addEventListener('click', (e) => {
-            if (e.target === galleryModal) {
-                galleryModal.classList.add('hidden');
-                document.body.style.overflow = 'auto';
-            }
-        });
-        
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (!galleryModal.classList.contains('hidden')) {
-                if (e.key === 'ArrowLeft') {
-                    document.getElementById('prev-photo').click();
-                } else if (e.key === 'ArrowRight') {
-                    document.getElementById('next-photo').click();
-                } else if (e.key === 'Escape') {
-                    document.getElementById('close-gallery-modal').click();
-                }
-            }
         });
         
         // Form validation and enhancement
@@ -1037,7 +1120,6 @@
                 
                 if (!isValid) {
                     e.preventDefault();
-                    // Show toast notification instead of alert
                     showToast('Please fill in all required fields.', 'error');
                 }
             });
@@ -1064,7 +1146,9 @@
             setTimeout(() => {
                 toast.classList.add('translate-x-full');
                 setTimeout(() => {
-                    document.body.removeChild(toast);
+                    if (document.body.contains(toast)) {
+                        document.body.removeChild(toast);
+                    }
                 }, 300);
             }, 3000);
         }
@@ -1114,20 +1198,17 @@
             observer.observe(el);
         });
         
-        // Loading animation
-        window.addEventListener('load', () => {
-            document.body.classList.add('loaded');
-        });
-        
         // Performance optimization: Lazy load images
         if ('IntersectionObserver' in window) {
             const imageObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.classList.remove('lazy');
-                        imageObserver.unobserve(img);
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.onload = () => img.classList.remove('opacity-0');
+                            observer.unobserve(img);
+                        }
                     }
                 });
             });
@@ -1136,71 +1217,6 @@
                 imageObserver.observe(img);
             });
         }
-        
-        // GALLERY ALBUMS DATA (update this if you add more albums/folders)
-        const galleryAlbums = [
-            {
-                name: 'Old Diaries',
-                folder: 'gallery/old_diaries',
-                cover: 'gallery/old_diaries/gallery (1).jpg',
-                images: [
-                    'gallery (1).jpg',
-                    'gallery (2).jpg',
-                    'gallery (3).jpg',
-                    'gallery (4).jpg',
-                    'gallery (5).jpg',
-                    'gallery (6).jpg',
-                    'gallery (7).jpg'
-                ]
-            }
-            // Add more albums here as needed
-        ];
-        
-        // Render album cards
-        const galleryAlbumsContainer = document.getElementById('gallery-albums');
-        galleryAlbumsContainer.innerHTML = '';
-        galleryAlbums.forEach((album, idx) => {
-            const albumCard = document.createElement('div');
-            albumCard.className = 'bg-white rounded-2xl shadow-lg p-6 card-hover flex flex-col items-center';
-            albumCard.innerHTML = `
-                <div class="w-full h-40 rounded-xl overflow-hidden mb-4 flex gap-2">
-                    ${album.images.slice(0, 3).map(img => `<img src='${album.folder}/${img}' alt='' class='object-cover h-full w-1/${album.images.slice(0,3).length} rounded-lg'>`).join('')}
-                </div>
-                <h4 class="text-xl font-bold mb-2 text-center">${album.name}</h4>
-                <button class="btn-primary text-white px-6 py-2 rounded-full font-semibold mt-2 view-album-btn" data-album-idx="${idx}">View More</button>
-            `;
-            galleryAlbumsContainer.appendChild(albumCard);
-        });
-        
-        // Modal logic
-        const modalAlbumTitle = document.getElementById('modal-album-title');
-        const modalPhotoList = document.getElementById('modal-photo-list');
-        
-        galleryAlbumsContainer.querySelectorAll('.view-album-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const idx = this.getAttribute('data-album-idx');
-                const album = galleryAlbums[idx];
-                modalAlbumTitle.textContent = album.name;
-                modalPhotoList.innerHTML = album.images.map(img => `<img src='${album.folder}/${img}' alt='' class='w-full h-48 object-cover rounded-lg mb-2'>`).join('');
-                galleryModal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            });
-        });
-        document.getElementById('close-gallery-modal').addEventListener('click', () => {
-            galleryModal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        });
-        
-        // Gallery data with local images
-        const galleryImages = [
-            { src: 'gallery/old_diaries/gallery (1).jpg', alt: 'HN-MCC Team Photo 1', category: 'team', caption: 'Team Photo - Season 2024' },
-            { src: 'gallery/old_diaries/gallery (2).jpg', alt: 'HN-MCC Team Photo 2', category: 'team', caption: 'Squad Goals - Pre-match huddle' },
-            { src: 'gallery/old_diaries/gallery (3).jpg', alt: 'Cricket Match Action', category: 'matches', caption: 'Match Action - Batting masterclass' },
-            { src: 'gallery/old_diaries/gallery (4).jpg', alt: 'Victory Celebration', category: 'matches', caption: 'Victory! - Championship win' },
-            { src: 'gallery/old_diaries/gallery (5).jpg', alt: 'Club Event', category: 'events', caption: 'Club Event - Annual dinner' },
-            { src: 'gallery/old_diaries/gallery (6).jpg', alt: 'Training Session', category: 'events', caption: 'Training Day - Skills development' },
-            { src: 'gallery/old_diaries/gallery (7).jpg', alt: 'Team Bonding', category: 'team', caption: 'Team Bonding - Off-field friendship' }
-        ];
     </script>
 </body>
 </html>
