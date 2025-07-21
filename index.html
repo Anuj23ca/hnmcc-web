@@ -653,7 +653,20 @@
         const seeMoreBtn = document.getElementById('see-more-gallery');
         const modal = document.getElementById('gallery-modal');
         const closeModalBtn = document.getElementById('close-gallery-modal');
-        const modalGrid = document.getElementById('modal-gallery-grid');
+        const modalGrid = document.getElementById('modal-gallery-grid');        <!-- Mobile Navigation Overlay -->
+        <div id="mobile-menu-overlay" class="fixed inset-0 z-50 bg-black bg-opacity-60 hidden"></div>
+        <div id="mobile-menu" class="fixed top-0 left-0 w-4/5 max-w-xs h-full bg-white z-50 shadow-lg transform -translate-x-full transition-transform duration-300 lg:hidden">
+            <div class="flex flex-col space-y-4 p-6 pt-20">
+                <a href="#home" class="text-neutral-700 hover:text-primary-600 transition-colors font-medium">Home</a>
+                <a href="#about" class="text-neutral-700 hover:text-primary-600 transition-colors font-medium">About</a>
+                <a href="#players-section" class="text-neutral-700 hover:text-primary-600 transition-colors font-medium">Players</a>
+                <a href="#gallery" class="text-neutral-700 hover:text-primary-600 transition-colors font-medium">Gallery</a>
+                <a href="#arrange" class="text-neutral-700 hover:text-primary-600 transition-colors font-medium">Register to Our Tournament</a>
+                <a href="#sponsors" class="text-neutral-700 hover:text-primary-600 transition-colors font-medium">Sponsors</a>
+                <a href="#contact" class="text-neutral-700 hover:text-primary-600 transition-colors font-medium">Contact</a>
+                <a href="#join" class="btn-primary text-white px-6 py-3 rounded-full font-semibold text-center">Join Club</a>
+            </div>
+        </div>
         const albumTabs = document.querySelectorAll('.album-tab');
 
         // Images by folder (updated)
